@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Registration Form</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="page">
+    <div class="card">
+
+      <header class="card__header">
+        <h1>Student Registration</h1>
+        <p class="card__subtitle">Fill in your details below to complete enrollment.</p>
+      </header>
+
+      <form id="registrationForm" novalidate>
+        <div class="form-grid">
+
+          <div class="field">
+            <label for="fullName">Full Name</label>
+            <input type="text" id="fullName" name="fullName" placeholder="e.g. Arjun Kumar" autocomplete="name">
+            <span class="error" id="fullNameError"></span>
+          </div>
+
+          <div class="field">
+            <label for="rollNumber">Roll Number</label>
+            <input type="text" id="rollNumber" name="rollNumber" placeholder="e.g. 421125109005">
+            <span class="error" id="rollNumberError"></span>
+          </div>
+
+          <div class="field">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" placeholder="e.g. arjun@example.com" autocomplete="email">
+            <span class="error" id="emailError"></span>
+          </div>
+
+          <div class="field">
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone" placeholder="10-digit mobile number" maxlength="10" autocomplete="tel">
+            <span class="error" id="phoneError"></span>
+          </div>
+
+          <div class="field">
+            <label for="dob">Date of Birth</label>
+            <input type="date" id="dob" name="dob">
+            <span class="error" id="dobError"></span>
+          </div>
+
+          <div class="field">
+            <label for="course">Course / Department</label>
+            <select id="course" name="course">
+              <option value="">Select a course</option>
+              <option value="Computer Science">Computer Science</option>
+              <option value="Cyber Security">Cyber Security</option>
+              <option value="Electronics">Electronics</option>
+              <option value="Mechanical">Mechanical</option>
+              <option value="Civil">Civil</option>
+              <option value="Other">Other</option>
+            </select>
+            <span class="error" id="courseError"></span>
+          </div>
+
+          <div class="field field--full">
+            <span class="field-label">Gender</span>
+            <div class="radio-group">
+              <label class="radio"><input type="radio" name="gender" value="Female"> Female</label>
+              <label class="radio"><input type="radio" name="gender" value="Male"> Male</label>
+              <label class="radio"><input type="radio" name="gender" value="Other"> Other</label>
+            </div>
+            <span class="error" id="genderError"></span>
+          </div>
+
+          <div class="field field--full">
+            <label for="address">Address</label>
+            <textarea id="address" name="address" rows="3" maxlength="150" placeholder="House no, street, city, state"></textarea>
+            <div class="field-meta">
+              <span class="error" id="addressError"></span>
+              <span class="char-count" id="addressCount">0 / 150</span>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="form-actions">
+          <button type="button" id="resetBtn" class="btn btn--ghost">Reset</button>
+          <button type="submit" class="btn btn--primary">Register</button>
+        </div>
+      </form>
+
+      <div class="success-banner" id="successBanner" hidden>
+        <h2>Registration successful</h2>
+        <p>Thanks, <span id="successName"></span>. Your details have been recorded.</p>
+        <dl class="summary" id="summaryList"></dl>
+        <button type="button" class="btn btn--primary" id="newRegistrationBtn">Register another student</button>
+      </div>
+
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
